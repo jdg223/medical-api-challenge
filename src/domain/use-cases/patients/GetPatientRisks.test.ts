@@ -1,10 +1,13 @@
 import { describe, expect, test } from "bun:test";
-import { GetPatientRisks } from "./GetPatientRisks";
-import { TemperatureRisk } from "../../entities/patients/risks/TemperatureRisk";
-import { BloodPressureRisk } from "../../entities/patients/risks/BloodPressureRisk";
+
+import type { Patient } from "../../entities/patients/Patient";
+
 import { AgeRisk } from "../../entities/patients/risks/AgeRisk";
 import { PatientRisks } from "../../entities/patients/PatientRisks";
-import type { Patient } from "../../entities/patients/Patient";
+import { TemperatureRisk } from "../../entities/patients/risks/TemperatureRisk";
+import { BloodPressureRisk } from "../../entities/patients/risks/BloodPressureRisk";
+
+import { GetPatientRisks } from "./GetPatientRisks";
 
 describe('GetPatientRisks', () => {
     const getPatientRisks = new GetPatientRisks([
