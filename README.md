@@ -12,7 +12,7 @@ I made this for a coding challenge I had to do. If you think I should have imple
 
 **API Behavior & Challenges**:
 -   **Rate Limiting**: The API frequently returns 429 Too Many Requests errors.
--   **Intermittent Failures**: Approximately 5% of requests fail with 429/500/503 errors.
+-   **Intermittent Failures**: Approximately 5% of requests fail with 500/503 errors.
 -   **Inconsistent Data**: Fields like `blood_pressure` or `temperature` often contain non-numeric strings ("120/80", "150/", "INVALID", "N/A"), or data is completely missing.
 -   **Pagination**: Resources must be fetched in pages (default 20 items/page).
 
@@ -44,7 +44,7 @@ This solution emphasizes reliability, correctness, and maintainability using **C
 -   **100% Test Coverage**: Every component, from the HTTP client to the risk calculators, is fully unit tested.
 -   **No External Dependencies**: Built using only standard library features and the Bun runtime (except for Bun's built-in test runner).
 -   **Robust Error Handling**:
-    -   **Retry Strategy**: Automatically retries 500/503 errors with exponential backoff.
+    -   **Retry Strategy**: Automatically retries 429/500/503 errors with exponential backoff.
     -   **Rate Limiting**: Respects headers/errors and manages request pacing.
 
 ### Data Consistency & Logical Flow
